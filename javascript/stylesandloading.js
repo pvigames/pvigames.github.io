@@ -14,23 +14,18 @@ window.addEventListener("load", function() {
 function swapStyleSheet(style){
   window.localStorage.removeItem('laststyle');
   currentlanguage=window.localStorage.getItem('lastLanguage');
+  document.getElementById('pagestyle').setAttribute('href', '');
+  document.getElementById('page').setAttribute('href', '');
   if (style==='none'){
-    if (currentlanguage==='english') {
-      document.getElementById('pagestyle').setAttribute('href', '');
-    }
     if (currentlanguage==='french') {
-      document.getElementById('pagestyle').setAttribute('href', '');
       document.getElementById("title").style.fontSize = "13vw";
     }
     if (currentlanguage==='german') {
-      document.getElementById('pagestyle').setAttribute('href', '');
       document.getElementById("title").style.fontSize = "9vw";
     }
   }
   if (style==='coffee') {
-    if (currentlanguage==='english') {
-      document.getElementById('pagestyle').setAttribute('href', 'stylesheets/coffeehouse.css');
-    }
+    document.getElementById('page').setAttribute('href', 'stylesheets/coffeehouse.css');
     if (currentlanguage==='german') {
       document.getElementById('pagestyle').setAttribute('href', 'stylesheets/coffeehousegerman.css');
     }
