@@ -6,8 +6,8 @@ body {
 .Button{
   display: inline-block;
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border: none;
   outline: none;
   color: white;
