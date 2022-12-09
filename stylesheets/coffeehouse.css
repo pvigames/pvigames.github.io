@@ -25,8 +25,10 @@ body {
   -webkit-text-stroke-color: #FFEEAF;
 }
 .Button {
-  background: #B1A7A6;
+  background: #313133;
   transition: 1s;
+  border: 2px solid #FFEEAF;
+  color: #FFEEAF;
 }
 .Button:hover{
   background: #948e8e;
