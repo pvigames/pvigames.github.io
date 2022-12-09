@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <title>Classes</title>
+    <script src="javascript/stylesandloading.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/font.css">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="stylesheets/coffee.css">
+  </head>
+  <body>
+    <!---top menu!-->
+    <div class="dropdown">
+      <button id ="dropdown">Themes</button>
+      <div class="dropdown-content">
+        <a id="theme1" onclick="swapStyleSheet('none')">None</a>
+        <a id="theme2" onclick="swapStyleSheet('table')">Table</a>
+        <a id="theme3" onclick="swapStyleSheet('coffee')">Coffee</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button id="dropdown2">Languages</button>
+      <div class="dropdown-content">
+        <a id="lang1" onclick="swapLanguage('english')">English</a>
+        <a id="lang2" onclick="swapLanguage('german')">German</a>
+        <a id="lang3" onclick="swapLanguage('french')">French</a>
+      </div>
+    </div>
+    
+    <div class="titlecont"><h1 id="title"><span onclick="location.href='oconnel.html'">PVI</span> Games!</h1></div>
+    <div class="buttonbox" id ="buttonbox">
+    </div>
+  </body>
+</html>
