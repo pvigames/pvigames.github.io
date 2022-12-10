@@ -11,7 +11,7 @@ const sites = [
   ["Semantle", "semantle.novalis.org/", true],
   ["Quordle", "www.quordle.com/#/", true], 
   ["Jsemu2", "jsemu2.github.io/gba/", true], 
-  ["TotallyS", "totallyscience.co/classes.html", false],
+  ["TotallyS", "https://crabhelper.github.io/CMT/iframe/help.html", true],
   ["Funblock", "sites.google.com/site/funblocked77/retro-bowl-unblocked", true], 
   ["BrownCha", "browncha023.github.io/GBA/", true], 
   ["DriftHunt", "v6p9d9t4.ssl.hwcdn.net/html/1792221/ItchIO/index.html", true],
