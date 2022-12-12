@@ -1,30 +1,9 @@
 /*load up the last style*/
 let last = window.localStorage.getItem('laststyle');
-const sites = [
-  ["GetJesus", "pvigaming.github.io/", true], 
-  ["GetAshley", "crabhelper.github.io/get-ashley/", true], 
-  ["GetMIT", "mitchgu.github.io/GetMIT/", true], 
-  ["GetPVI", "getpvi.github.io/GetPVI/", true], 
-  ["Wordle", "www.nytimes.com/games/wordle/index.html", true], 
-  ["Worldle", "worldle.teuteuf.fr/", true], 
-  ["WordleU", "www.wordleunlimited.com/", true], 
-  ["Semantle", "semantle.novalis.org/", true],
-  ["Quordle", "www.quordle.com/#/", true], 
-  ["Jsemu2", "jsemu2.github.io/gba/", true], 
-  ["TotallyS", "crabhelper.github.io/CMT/iframe/help.html", true],
-  ["Funblock", "sites.google.com/site/funblocked77/retro-bowl-unblocked", true], 
-  ["BrownCha", "browncha023.github.io/GBA/", true], 
-  ["DriftHunt", "v6p9d9t4.ssl.hwcdn.net/html/1792221/ItchIO/index.html", true],
-  ["TheGameComp", "sites.google.com/site/thegamecompilation/home", true]
-];
 window.addEventListener("load", function() {
   document.getElementById('pagestyle').setAttribute('href', last);
   let loadlastlang = window.localStorage.getItem('lastLanguage');
   swapLanguage(loadlastlang);
-  for (let site of sites) {
-    let red = (site[2]) ? " " : "style=\"background-color: red\"";
-    document.getElementById('buttonbox').innerHTML += `<button class="Button" ${red} onclick="location.href='https://${site[1]}'">${site[0]}</button>`;
-  }
 });
 /*swap the style*/
 function swapStyleSheet(style){
@@ -54,44 +33,19 @@ function swapStyleSheet(style){
   }
   window.localStorage.setItem('laststyle', style);
 }
-/*swap the language*/
+const items = ["title", "dropdown", "theme1", "theme2", "theme3", "dropdown2", "lang1", "lang2", "lang3"];
+const english  = ["<span onclick=\"location.href=\'oconnel.html\'\">PVI</span> Games!", "Themes", "None", "Table", "Coffee", "Languages", "English", "German", "French"];
+const french = ["Les  jeux  de  <span onclick=\"location.href=\'oconnel.html\'\">PVI</span>", "Thèmes", "Aucun", "Café", "Langues", "Anglais", "Allemand", "Français"];
+const german = ["<span onclick=\"location.href=\'oconnel.html\'\">PVIs</span> Lieblingsspiele", "Themen", "Kleiner", "Tisch", "Kaffee", "Sprachen", "Englisch", "Deutsch", "Französisch"];
 function swapLanguage(x) {
-        if(x ==='english') {
-          document.getElementById("title").innerHTML = "<span onclick=\"location.href=\'oconnel.html\'\">PVI</span> Games!";
-          document.getElementById("dropdown").innerHTML = "Themes";
-          document.getElementById("theme1").innerHTML = "None";
-          document.getElementById("theme2").innerHTML = "Table";
-          document.getElementById("theme3").innerHTML = "Cofee";
-          document.getElementById("dropdown2").innerHTML = "Languages";
-          document.getElementById("lang1").innerHTML = "English";
-          document.getElementById("lang2").innerHTML = "German";
-          document.getElementById("lang3").innerHTML = "French";
-        }
-        if(x ==='french') {
-          document.getElementById("title").innerHTML = "Les  jeux  de  <span onclick=\"location.href=\'oconnel.html\'\">PVI</span>";
-          document.getElementById("dropdown").innerHTML = "Thèmes";
-          document.getElementById("theme1").innerHTML = "Aucun";
-          document.getElementById("theme2").innerHTML = "Table";
-          document.getElementById("theme3").innerHTML = "Café";
-          document.getElementById("dropdown2").innerHTML = "Langues";
-          document.getElementById("lang1").innerHTML = "Anglais";
-          document.getElementById("lang2").innerHTML = "Allemand";
-          document.getElementById("lang3").innerHTML = "Français";
-          /*document.getElementById("title").style.fontSize = "100vw";*/
-        }
-        if (x==='german') {
-          document.getElementById("title").innerHTML = "<span onclick=\"location.href=\'oconnel.html\'\">PVIs</span> Lieblingsspiele";
-          document.getElementById("dropdown").innerHTML = "Themen";
-          document.getElementById("theme1").innerHTML = "Kleiner";
-          document.getElementById("theme2").innerHTML = "Tisch";
-          document.getElementById("theme3").innerHTML = "Kaffee";
-          document.getElementById("dropdown2").innerHTML = "Sprachen";
-          document.getElementById("lang1").innerHTML = "Englisch";
-          document.getElementById("lang2").innerHTML = "Deutsch";
-          document.getElementById("lang3").innerHTML = "Französisch";
-          /*css fixing*/
-        }
+  let templist=null;
+  if(x ==='english') templist = english;
+  else if (x ==='french') templist = french;
+  else templist = german;
+  for (let i = 0; i<items.length;i++) {
+    document.getElementById(items[i]).innerHTML=templist[i];
+  }
   window.localStorage.setItem('lastLanguage', x);
   currentstyle = window.localStorage.getItem('laststyle');
   swapStyleSheet(currentstyle);
-      }
+}
