@@ -16,9 +16,20 @@ const sites = [
     ["TheGameComp", "sites.google.com/site/thegamecompilation/home", false],
     ["WatchDoc","crabhelper.github.io/CMT/classhelp/science.html", false]
   ];
+/* Old Load (makes red)
 window.addEventListener("load", () => {
     for (let site of sites) {
         let red = (site[2]) ? " " : "style=\"background-color: red\"";
         document.getElementById('buttonbox').innerHTML += `<button class="Button" ${red} onclick="location.href='https://${site[1]}'">${site[0]}</button>`;
       }
+});
+
+*/
+/* New Load (makes non working sites invisible) */
+window.addEventListener("load", () => {
+    for (let site of sites) {
+        if (site[3]) {
+            document.getElementById('buttonbox').innerHTML += `<button class="Button" onclick="location.href='https://${site[1]}'">${site[0]}</button>`;
+        }
+    }
 });
